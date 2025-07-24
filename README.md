@@ -58,9 +58,9 @@ digraph G {
 ```
 make_graph.sh:
 
-    ```bash
-    dot -Tpng graph.dot -o graph.png 
-    ```
+```bash
+dot -Tpng graph.dot -o graph.png 
+```
 
 result image:  
 ![Dependency Graph](graph.png)
