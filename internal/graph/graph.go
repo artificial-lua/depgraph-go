@@ -23,7 +23,7 @@ func GenerateDot(packages map[string][]string, outputFile string) error {
 			pkgName = "."
 		}
 		for _, ref := range refs {
-			file.WriteString(fmt.Sprintf("    \"%s\" -> \"%s\";\n", pkgName, ref))
+			file.WriteString(fmt.Sprintf("    \"%s\" -> \"%s\";\n", ref, pkgName))
 		}
 	}
 

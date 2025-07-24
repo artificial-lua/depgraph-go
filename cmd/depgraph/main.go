@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/artificial-lua/depgraph-go/internal/graph"
+	"github.com/artificial-lua/depgraph-go/internal/graph" // TODO: Reverse arrow direction in GenerateDot implementation
 	"github.com/artificial-lua/depgraph-go/internal/parser"
 	"github.com/artificial-lua/depgraph-go/internal/walker"
 )
