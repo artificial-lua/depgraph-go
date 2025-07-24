@@ -45,39 +45,38 @@ Use Graphviz to convert the .dot file:
     Open graph.png with any image viewer to see the package dependency graph.
 
 ## Example Output
-graph.dot:
-
+graph.dot`:
 ```dot
 digraph G {
     rankdir=LR;
     node [shape=box, style=filled, fillcolor=lightblue];
-    "." -> "internal/parser";
-    "." -> "internal/walker";
-    "internal/walker" -> "internal/parser";
+    "internal/parser" -> ".";
+    "internal/walker" -> ".";
+    "internal/parser" -> "internal/walker";
 }
 ```
 make_graph.sh:
 
 ```bash
-dot -Tpng graph.dot -o graph.png 
+    dot -Tpng graph.dot -o graph.png 
 ```
 
 result image:  
 ![Dependency Graph](graph.png)
 
 ## Why?
-•	Visualize internal package dependencies at a glance.
-•	Detect unwanted cross-package dependencies.
-•	Useful for large Go projects to keep architecture clean.
+- Visualize internal package dependencies at a glance.
+- Detect unwanted cross-package dependencies. 
+- Useful for large Go projects to keep architecture clean.
 
 ## Future Improvements
-•	Add external package visualization (different colors for stdlib, third-party, internal).
-•	Group packages by directory clusters.
-•	Interactive web-based visualization (e.g., D3.js).
+- Add external package visualization (different colors for stdlib, third-party, internal). 
+- Group packages by directory clusters. 
+- Interactive web-based visualization (e.g., D3.js).
 
 ## Requirements
-•	Go 1.24+
-•	Graphviz for rendering .dot files
+- Go 1.24+ 
+- Graphviz for rendering .dot files
 
 ## License
 
